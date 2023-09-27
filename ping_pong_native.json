@@ -1,0 +1,7 @@
+{
+  "name": "com.my_company.my_application",
+  "description": "Ping pong Application",
+  "path": "/usr/lib/desktoplinkmanager/desktoplinkmanager",
+  "type": "stdio",
+  "allowed_origins": ["chrome-extension://ihijjdojdcljkngmpjogigehpnbmikno/"]
+}

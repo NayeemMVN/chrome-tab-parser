@@ -26,3 +26,20 @@ chrome.tabs.onRemoved.addListener(async() => {
     tabCollections = await chrome.tabs.query({})
 })
 
+const port = chrome.runtime.connectNative('com.my_company.my_application');
+port.onMessage.addListener(function (msg) {
+    console.log('Received' + msg);
+});
+port.onDisconnect.addListener(function () {
+    console.log('Disconnected');
+});
+port.postMessage({text: 'Hello, my_application'});
+
+// chrome.runtime.sendNativeMessage(
+//     'com.my_company.my_application',
+//     {text: 'Hello'},
+//     function (response) {
+//         console.log('Received ' + response);
+//     }
+// );
+
