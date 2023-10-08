@@ -1,19 +1,6 @@
 import '../styles/popup.scss';
 
-document.getElementById('go-to-options').addEventListener('click', () => {
-  chrome.runtime.openOptionsPage();
+document.getElementById('post-msg-button').addEventListener('click', () => {
+  chrome.runtime.sendMessage({'msgFromPopup': document.getElementById('msg').value})
 });
 
-
-
-const app = async () => {
-  // const tabs = await chrome.tabs.query({
-  //   url: [
-  //     "https://developer.chrome.com/*",
-  //   ],
-  // });
-  //
-  // console.log(tabs)
-}
-
-app()
